@@ -1,5 +1,6 @@
 import { loadHeader } from './blocks/header/header.js';
 import { loadFooter } from './blocks/footer/footer.js';
+import { decorateBlocks, loadBlocks } from './scripts/aem.js';
 
 console.log('scripts.js running');
 
@@ -15,7 +16,11 @@ async function loadPage() {
     await loadHeader(header);
     await loadFooter(footer);
 
-    console.log('header and footer loaded');
+    // Find and initialize blocks on the page
+    decorateBlocks(document.body);
+    await loadBlocks(document.body);
+
+    console.log('header, footer and blocks loaded');
 }
 
 loadPage();
