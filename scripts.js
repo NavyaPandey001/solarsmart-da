@@ -1,5 +1,5 @@
-import { loadHeader, loadFooter } from './blocks/header/header.js';
-
+import { loadHeader } from './blocks/header/header.js';
+import { loadFooter } from './blocks/footer/footer.js';
 
 console.log('scripts.js running');
 
