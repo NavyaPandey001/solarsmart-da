@@ -10,6 +10,10 @@ export async function loadBlocks(main) {
     const blocks = main.querySelectorAll('.cards');
 
     for (const block of blocks) {
+        await import('../blocks/cards/cards.css', {
+            assert: { type: 'css' },
+        }).catch(() => {});
+
         const { default: decorateCards } = await import(
             '../blocks/cards/cards.js'
             );
