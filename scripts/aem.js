@@ -10,7 +10,7 @@ export function decorateBlocks(main) {
 
 export async function loadBlocks(main) {
     const blocks = main.querySelectorAll(
-        '.cards, .columns, .contact-form, .hero, .map, .savings-calculator, .stats, .testimonials, .timeline'
+        '.blog-list, .cards, .columns, .contact-form, .hero, .map, .savings-calculator, .stats, .testimonials, .timeline'
     );
 
     for (const block of blocks) {
@@ -70,6 +70,12 @@ export async function loadBlocks(main) {
                 '../blocks/stats/stats.js'
                 );
             decorateStats(block);
+        }
+        if (block.classList.contains('blog-list')) {
+            const { default: decorateBlogList } = await import(
+                '../blocks/blog-list/blog-list.js'
+                );
+            decorateBlogList(block);
         }
     }
 }

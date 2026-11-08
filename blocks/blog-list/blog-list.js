@@ -9,7 +9,7 @@ function loadCSS() {
 }
 
 const INDEX_URL = '/blog-index.json';
-const ARTICLES_PER_PAGE = 4;
+const ARTICLES_PER_PAGE = 3;
 
 function getDateValue(date) {
     if (!date) return 0;
