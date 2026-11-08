@@ -1,6 +1,8 @@
 
 function loadCSS() {
-    if (!document.querySelector('link[href="/blocks/contact-form/contact-form.css"]')) {
+    if (!document.querySelector(
+        'link[href="/blocks/contact-form/contact-form.css"]'
+    )) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = '/blocks/contact-form/contact-form.css';
@@ -12,14 +14,15 @@ export default function decorate(block) {
     loadCSS();
 
     const rows = [...block.children];
-    const form = document.createElement('form');
 
+    const form = document.createElement('form');
     form.className = 'contact-form-element';
     form.id = 'contact-form';
 
+    let submitButton;
+
     rows.forEach((row) => {
         const cells = [...row.children];
-
         if (!cells.length) return;
 
         const label = cells[0].textContent.trim();
@@ -28,11 +31,11 @@ export default function decorate(block) {
         if (!label) return;
 
         if (type === 'submit') {
-            const button = document.createElement('button');
-            button.type = 'submit';
-            button.textContent = label;
-            button.className = 'contact-submit';
-            form.append(button);
+            submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.textContent = label;
+            submitButton.className = 'contact-submit';
+            form.append(submitButton);
             return;
         }
 
@@ -76,20 +79,77 @@ export default function decorate(block) {
         form.append(field);
     });
 
+    if (!submitButton) {
+        submitButton = document.createElement('button');
+        submitButton.type = 'submit';
+        submitButton.textContent = 'Submit Enquiry';
+        submitButton.className = 'contact-submit';
+        form.append(submitButton);
+    }
+
     const message = document.createElement('p');
     message.className = 'contact-form-message';
     message.setAttribute('aria-live', 'polite');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         if (!form.reportValidity()) return;
 
-        message.textContent =
-            'Thank you! Your request has been received.';
-        message.classList.add('success');
+        const formData = {};
 
-        form.reset();
+        [...form.querySelectorAll('input, textarea')].forEach((field) => {
+            formData[field.name] = field.value.trim();
+        });
+
+        const payload = {
+            name: formData.name || formData['full-name'] || '',
+            email: formData.email || '',
+            phone: formData.phone || formData['phone-number'] || '',
+            message: formData.message || '',
+        };
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        message.textContent = 'Submitting your enquiry...';
+        message.className = 'contact-form-message loading';
+
+        try {
+            const response = await fetch(
+                'https://solarsmart-api.free.beeceptor.com/lead',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                },
+            );
+
+            if (!response.ok) {
+                throw new Error(`API request failed: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            message.textContent =
+                data.message || 'Thank you! Your enquiry has been submitted.';
+
+            message.className = 'contact-form-message success';
+
+            form.reset();
+        } catch (error) {
+            message.textContent =
+                'Unable to submit your enquiry. Please try again later.';
+
+            message.className = 'contact-form-message error';
+
+            console.error('Contact Form API error:', error);
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Enquiry';
+        }
     });
 
     form.append(message);

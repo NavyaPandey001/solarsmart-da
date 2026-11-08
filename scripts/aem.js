@@ -10,7 +10,7 @@ export function decorateBlocks(main) {
 
 export async function loadBlocks(main) {
     const blocks = main.querySelectorAll(
-        '.blog-list, .cards, .columns, .contact-form, .hero, .map, .savings-calculator, .stats, .testimonials, .timeline'
+        '.blog-list, .cards, .columns, .contact-form, .hero, .map, .offer-banner, .savings-calculator, .stats, .testimonials, .timeline'
     );
 
     for (const block of blocks) {
@@ -76,6 +76,12 @@ export async function loadBlocks(main) {
                 '../blocks/blog-list/blog-list.js'
                 );
             decorateBlogList(block);
+        }
+        if (block.classList.contains('offer-banner')) {
+            const { default: decorateBanner } = await import(
+                '../blocks/offer-banner/offer-banner.js'
+                );
+            decorateBanner(block);
         }
     }
 }

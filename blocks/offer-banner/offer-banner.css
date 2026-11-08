@@ -1,0 +1,81 @@
+
+.offer-banner-container {
+    width: 100%;
+    padding: 40px 24px;
+    margin: 20px 0;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #064e3b, #15803d);
+    color: #ffffff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.offer-banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.offer-banner-content h2 {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.offer-banner-content p {
+    margin: 0 auto 20px;
+    color: #f0fdf4;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.offer-discount {
+    display: block;
+    margin: 15px 0 22px;
+    color: #fef08a;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.offer-cta {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #166534;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.offer-cta:hover {
+    background: #dcfce7;
+    transform: translateY(-2px);
+}
+
+.offer-cta:focus-visible {
+    outline: 3px solid #fef08a;
+    outline-offset: 4px;
+}
+
+.offer-banner-container.offer-error {
+    background: #374151;
+}
+
+@media (max-width: 600px) {
+    .offer-banner-container {
+        padding: 30px 18px;
+    }
+
+    .offer-banner-content h2 {
+        font-size: 25px;
+    }
+
+    .offer-banner-content p {
+        font-size: 15px;
+    }
+
+    .offer-discount {
+        font-size: 30px;
+    }
+}
