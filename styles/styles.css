@@ -1,0 +1,41 @@
+[data-animate] {
+    opacity: 0;
+    animation: solarFadeIn 0.8s ease forwards;
+}
+
+[data-animate="fade-in"] {
+    animation-name: solarFadeIn;
+}
+
+[data-animate="slide-up"],
+[data-animate="fade-up"] {
+    animation-name: solarSlideUp;
+}
+
+@keyframes solarFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes solarSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
