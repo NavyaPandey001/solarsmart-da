@@ -1,4 +1,3 @@
-
 function loadCSS(href) {
     if (!document.querySelector(`link[href="${href}"]`)) {
         const link = document.createElement('link');
@@ -10,7 +9,6 @@ function loadCSS(href) {
 
 export default function decorate(block) {
 
-    // Automatically load cards CSS
     loadCSS('/blocks/cards/cards.css');
 
     const rows = [...block.children];

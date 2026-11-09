@@ -31,7 +31,6 @@ export function initMetadataHandler() {
     const pageMetadata = getPageMetadata();
     const sectionMetadata = getSectionMetadata();
 
-    // Expose metadata globally for analytics.
     window.digitalData = {
         page: {
             title: 'SolarSmart Home',
@@ -62,7 +61,6 @@ export function initMetadataHandler() {
     console.log('SolarSmart Page Metadata:', pageMetadata);
     console.log('SolarSmart Section Metadata:', sectionMetadata);
 
-    // Track clicks on sections configured for click tracking.
     document.addEventListener('click', (event) => {
         const section = event.target.closest('main > div');
 
@@ -89,7 +87,6 @@ export function initMetadataHandler() {
         console.log('SolarSmart Click Event:', clickData);
     });
 
-    // Track section impressions.
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

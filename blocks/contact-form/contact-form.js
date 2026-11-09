@@ -1,4 +1,3 @@
-
 function loadCSS() {
     if (!document.querySelector(
         'link[href="/blocks/contact-form/contact-form.css"]'

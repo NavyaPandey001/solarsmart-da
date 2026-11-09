@@ -1,5 +1,3 @@
-
-
 function loadCSS() {
     if (!document.querySelector('link[href="/blocks/stats/stats.css"]')) {
         const link = document.createElement('link');

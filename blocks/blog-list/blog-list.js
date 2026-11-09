@@ -1,4 +1,3 @@
-
 function loadCSS() {
     if (!document.querySelector('link[href="/blocks/blog-list/blog-list.css"]')) {
         const link = document.createElement('link');

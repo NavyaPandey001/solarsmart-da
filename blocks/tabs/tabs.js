@@ -1,4 +1,3 @@
-
 function loadCSS() {
     const href = '/blocks/tabs/tabs.css';
 

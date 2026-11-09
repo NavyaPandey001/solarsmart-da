@@ -1,4 +1,3 @@
-
 function loadCSS() {
     if (!document.querySelector('link[href="/blocks/map/map.css"]')) {
         const link = document.createElement('link');

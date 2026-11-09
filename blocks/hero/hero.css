@@ -1,4 +1,3 @@
-
 .hero {
     background: linear-gradient(135deg, #eaf5ff, #f4fbff);
     padding: 90px 30px;
@@ -6,6 +5,7 @@
     margin: 24px 0;
     text-align: center;
 }
+
 
 .hero .hero-content {
     max-width: 850px;

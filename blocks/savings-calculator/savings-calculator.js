@@ -1,4 +1,3 @@
-
 function loadCSS(href) {
     if (!document.querySelector(`link[href="${href}"]`)) {
         const link = document.createElement('link');

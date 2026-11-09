@@ -1,4 +1,3 @@
-
 function loadCSS() {
     if (!document.querySelector('link[href="/blocks/timeline/timeline.css"]')) {
         const link = document.createElement('link');
