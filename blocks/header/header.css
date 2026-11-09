@@ -6,13 +6,15 @@ header {
 
 .header-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
 .header-nav ul {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
