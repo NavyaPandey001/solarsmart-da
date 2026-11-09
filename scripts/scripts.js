@@ -1,4 +1,3 @@
-
 import { initMetadataHandler } from './metadata-handler.js';
 
 import { loadHeader } from '../blocks/header/header.js';
@@ -10,6 +9,18 @@ import { decorateBlocks, loadBlocks } from './aem.js';
 console.log('scripts.js running');
 
 async function loadPage() {
+
+    function loadGlobalCSS() {
+        const href = '/styles/styles.css';
+
+        if (!document.querySelector(`link[href="${href}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.append(link);
+        }
+    }
+
     console.log('loading page');
 
     const header = document.createElement('header');

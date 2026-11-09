@@ -10,7 +10,7 @@ export function decorateBlocks(main) {
 
 export async function loadBlocks(main) {
     const blocks = main.querySelectorAll(
-        '.blog-list, .cards, .columns, .contact-form, .hero, .map, .offer-banner, .savings-calculator, .stats, .testimonials, .timeline'
+        '.blog-list, .cards, .columns, .contact-form, .faq, .hero, .map, .offer-banner, .recently-viewed, .related-articles, .savings-calculator, .stats, .tabs, .testimonials, .timeline'
     );
 
     for (const block of blocks) {
@@ -82,6 +82,30 @@ export async function loadBlocks(main) {
                 '../blocks/offer-banner/offer-banner.js'
                 );
             decorateBanner(block);
+        }
+        if (block.classList.contains('faq')) {
+            const { default: decorateFaq } = await import(
+                '../blocks/faq/faq.js'
+                );
+            decorateFaq(block);
+        }
+        if (block.classList.contains('tabs')) {
+            const { default: decorateTabs } = await import(
+                '../blocks/tabs/tabs.js'
+                );
+            decorateTabs(block);
+        }
+        if (block.classList.contains('recently-viewed')) {
+            const { default: decorateViewed } = await import(
+                '../blocks/recently-viewed/recently-viewed.js'
+                );
+            decorateViewed(block);
+        }
+        if (block.classList.contains('related-articles')) {
+            const { default: decorateRelated } = await import(
+                '../blocks/related-articles/related-articles.js'
+                );
+            decorateRelated(block);
         }
     }
 }

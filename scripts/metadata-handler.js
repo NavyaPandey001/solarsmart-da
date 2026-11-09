@@ -33,8 +33,30 @@ export function initMetadataHandler() {
 
     // Expose metadata globally for analytics.
     window.digitalData = {
-        page: pageMetadata,
-        sections: sectionMetadata,
+        page: {
+            title: 'SolarSmart Home',
+            template: 'homepage',
+            audience: 'consumer',
+        },
+
+
+        sections: [],
+
+
+        events: [
+            {
+                event: 'page_view',
+                page: '/index',
+            },
+            {
+                event: 'click',
+                element: 'Explore Solutions',
+            },
+            {
+                event: 'form_submit',
+                form: 'contact-form',
+            },
+        ],
     };
 
     console.log('SolarSmart Page Metadata:', pageMetadata);
