@@ -41,14 +41,14 @@
     padding: 13px 28px;
     border-radius: 6px;
     background: #ffffff;
-    color: #166534;
+    color: #F77F00;
     font-weight: 700;
     text-decoration: none;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .offer-cta:hover {
-    background: #dcfce7;
+    background: #F9E6A8;
     transform: translateY(-2px);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .offer-banner-container.offer-error {
-    background: #374151;
+    background: #4e4741;
 }
 
 @media (max-width: 600px) {

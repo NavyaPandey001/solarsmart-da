@@ -5,7 +5,7 @@
 }
 
 .faq .faq-item {
-    border: 1px solid #dce5df;
+    border: 1px solid #e5e0dc;
     border-radius: 8px;
     margin-bottom: 14px;
     overflow: hidden;
@@ -19,13 +19,13 @@
     list-style: none;
     font-size: 17px;
     font-weight: 600;
-    color: #164e3b;
+    color: #F77F00;
     transition: background-color 0.2s ease;
 }
 
 .faq .faq-item-label:hover,
 .faq .faq-item[open] .faq-item-label {
-    background-color: #f0f7f2;
+    background-color: #f7f2f0;
 }
 
 .faq .faq-item-label::-webkit-details-marker {
@@ -39,7 +39,7 @@
     right: 22px;
     width: 8px;
     height: 8px;
-    border: solid #166534;
+    border: solid #F77F00;
     border-width: 0 2px 2px 0;
     transform: translateY(-70%) rotate(45deg);
     transition: transform 0.2s ease;
@@ -51,7 +51,7 @@
 
 .faq .faq-item-body {
     padding: 18px 20px;
-    border-top: 1px solid #dce5df;
+    border-top: 1px solid #e5e1dc;
     color: #444444;
     line-height: 1.7;
     background-color: #ffffff;
@@ -62,7 +62,7 @@
 }
 
 .faq .faq-item-label:focus-visible {
-    outline: 3px solid #16a34a;
+    outline: 3px solid #FCBF49;
     outline-offset: -3px;
 }
 

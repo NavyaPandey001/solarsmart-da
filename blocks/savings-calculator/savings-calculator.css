@@ -15,7 +15,7 @@
 }
 
 .savings-calculator h2 {
-    color: #0a4d8c;
+    color: #D62828;
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 15px;
@@ -48,14 +48,14 @@
 
 .savings-calculator input:focus {
     outline: none;
-    border-color: #0a4d8c;
+    border-color: #D62828;
     box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.12);
 }
 
 .savings-calculator button {
     width: 100%;
     padding: 14px;
-    background: #0a4d8c;
+    background: #F77F00;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -66,7 +66,7 @@
 }
 
 .savings-calculator button:hover {
-    background: #073968;
+    background: #D62828;
 }
 
 .savings-calculator button:disabled {
@@ -88,7 +88,7 @@
 
 .savings-calculator .calculator-result.success {
     background: #e8f7ed;
-    color: #176b35;
+    color: #F77F00;
 }
 
 .savings-calculator .calculator-result.error {
@@ -98,7 +98,7 @@
 
 .savings-calculator .calculator-result.loading {
     background: #eaf3ff;
-    color: #0a4d8c;
+    color: #FCBF49;
 }
 
 /* Mobile responsive styling */

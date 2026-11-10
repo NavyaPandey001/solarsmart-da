@@ -4,7 +4,7 @@
 }
 
 .blog-list-heading {
-    color: #123c67;
+    color: #D62828;
     font-size: 36px;
     text-align: center;
     margin-bottom: 12px;
@@ -28,7 +28,7 @@
 .blog-sort {
     width: 100%;
     padding: 13px 15px;
-    border: 1px solid #d5dce5;
+    border: 1px solid #e5dcd5;
     border-radius: 8px;
     background: #fff;
     font-size: 15px;
@@ -38,7 +38,7 @@
 .blog-search:focus,
 .blog-category-filter:focus,
 .blog-sort:focus {
-    outline: 2px solid #1769aa;
+    outline: 2px solid #F77F00;
     outline-offset: 2px;
 }
 
@@ -58,7 +58,7 @@
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #e3e8ee;
+    border: 1px solid #eee6e3;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -87,8 +87,8 @@
 
 .blog-category {
     display: inline-block;
-    color: #1769aa;
-    background: #eaf4ff;
+    color: #FCBF49;
+    background: #fff1ea;
     border-radius: 20px;
     padding: 6px 12px;
     font-size: 12px;
@@ -96,7 +96,7 @@
 }
 
 .blog-card-title {
-    color: #123c67;
+    color: #F77F00;
     font-size: 21px;
     line-height: 1.4;
     margin: 0 0 12px;
@@ -131,16 +131,16 @@
 
 .blog-page-button {
     padding: 9px 15px;
-    border: 1px solid #1769aa;
+    border: 1px solid #FCBF49;
     background: #fff;
-    color: #1769aa;
+    color: #F77F00;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .blog-page-button:hover:not(:disabled),
 .blog-page-button.active {
-    background: #1769aa;
+    background: #F77F00;
     color: #fff;
 }
 

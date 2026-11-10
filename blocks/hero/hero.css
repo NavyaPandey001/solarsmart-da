@@ -1,5 +1,5 @@
 .hero {
-    background: linear-gradient(135deg, #eaf5ff, #f4fbff);
+    background: linear-gradient(135deg, #FCBF49, #f4fbff);
     padding: 90px 30px;
     border-radius: 16px;
     margin: 24px 0;
@@ -16,14 +16,14 @@
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
     font-weight: 700;
-    color: #0a4d8c;
+    color: #D62828;
     margin: 0 0 24px;
 }
 
 .hero p {
     font-size: 1.15rem;
     line-height: 1.7;
-    color: #455568;
+    color: #D62828;
     margin: 0 auto 32px;
     max-width: 700px;
 }
@@ -48,21 +48,21 @@
 }
 
 .hero .hero-primary-btn {
-    background: #0a4d8c;
+    background: #F77F00;
     color: #fff;
-    border: 2px solid #0a4d8c;
+    border: 2px solid #F9E6A8;
 }
 
 .hero .hero-primary-btn:hover {
-    background: #073968;
-    border-color: #073968;
+    background: #D62828;
+    border-color: #D62828;
     transform: translateY(-2px);
 }
 
 .hero .hero-secondary-btn {
     background: #fff;
-    color: #0a4d8c;
-    border: 2px solid #0a4d8c;
+    color: #F77F00;
+    border: 2px solid #F9E6A8;
 }
 
 .hero .hero-secondary-btn:hover {

@@ -6,7 +6,7 @@
 
 .recently-viewed-heading {
     margin-bottom: 24px;
-    color: #164e3b;
+    color: #D62828;
     font-size: 28px;
     font-weight: 700;
 }
@@ -19,7 +19,7 @@
 
 .recently-viewed-card {
     overflow: hidden;
-    border: 1px solid #dce5df;
+    border: 1px solid #e5dedc;
     border-radius: 10px;
     background: #ffffff;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -48,12 +48,12 @@
 }
 
 .recently-viewed-content h3 a {
-    color: #164e3b;
+    color: #D62828;
     text-decoration: none;
 }
 
 .recently-viewed-content h3 a:hover {
-    color: #16a34a;
+    color: #F77F00;
     text-decoration: underline;
 }
 

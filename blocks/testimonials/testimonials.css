@@ -18,7 +18,7 @@
     padding: 28px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-top: 4px solid #0a4d8c;
+    border-top: 4px solid #F77F00;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -28,14 +28,14 @@
 }
 
 .testimonials .testimonial-quote {
-    color: #455568;
+    color: #4D2A00;
     font-size: 1rem;
     line-height: 1.7;
     margin: 0 0 24px;
 }
 
 .testimonials .testimonial-name {
-    color: #0a4d8c;
+    color: #D62828;
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0 0 5px;

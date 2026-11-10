@@ -23,7 +23,7 @@
     top: 29px;      /* center of first circle */
     bottom: 58px;   /* stop at center of last circle */
     width: 3px;
-    background: #b9dfca;
+    background: #dfc4b9;
 }
 .timeline-step {
     position: relative;
@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #087443;
+    background: #D62828;
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -66,7 +66,7 @@
 }
 
 .timeline-step-title {
-    color: #087443;
+    color: #D62828;
     font-size: 21px;
     font-weight: 700;
     margin: 0 0 10px;
