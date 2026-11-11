@@ -1,3 +1,4 @@
+
 function loadCSS() {
     if (!document.querySelector(
         'link[href="/blocks/offer-banner/offer-banner.css"]'
@@ -12,9 +13,27 @@ function loadCSS() {
 export default function decorate(block) {
     loadCSS();
 
+    // Extract the image from DA before replacing the block content
+    const originalPicture = block.querySelector('picture');
+    const originalImage = block.querySelector('img');
+
+    let bannerImage = null;
+
+    if (originalPicture) {
+        bannerImage = originalPicture.cloneNode(true);
+    } else if (originalImage) {
+        bannerImage = originalImage.cloneNode(true);
+    }
+
+    // Main banner
     const banner = document.createElement('div');
     banner.className = 'offer-banner-container';
 
+    // Two-column layout
+    const layout = document.createElement('div');
+    layout.className = 'offer-banner-layout';
+
+    // Left content
     const content = document.createElement('div');
     content.className = 'offer-banner-content';
 
@@ -22,7 +41,8 @@ export default function decorate(block) {
     title.textContent = 'Loading latest offers...';
 
     const description = document.createElement('p');
-    description.textContent = 'Please wait while we fetch our latest solar offers.';
+    description.textContent =
+        'Please wait while we fetch our latest solar offers.';
 
     const discount = document.createElement('span');
     discount.className = 'offer-discount';
@@ -33,10 +53,24 @@ export default function decorate(block) {
     button.href = '/solutions';
 
     content.append(title, description, discount, button);
-    banner.append(content);
+
+    // Right image
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'offer-banner-image';
+
+    if (bannerImage) {
+        imageContainer.append(bannerImage);
+    } else {
+        imageContainer.classList.add('no-image');
+    }
+
+    // Assemble banner
+    layout.append(content, imageContainer);
+    banner.append(layout);
 
     block.replaceChildren(banner);
 
+    // API URL
     const API_URL = 'https://solarsmart-api.free.beeceptor.com/offers';
 
     async function loadOffer() {
@@ -44,28 +78,39 @@ export default function decorate(block) {
             const response = await fetch(API_URL);
 
             if (!response.ok) {
-                throw new Error(`API request failed: ${response.status}`);
+                throw new Error(
+                    `API request failed: ${response.status}`
+                );
             }
 
             const data = await response.json();
 
-            if (!data.success || !Array.isArray(data.offers) || !data.offers.length) {
+            if (
+                !data.success ||
+                !Array.isArray(data.offers) ||
+                !data.offers.length
+            ) {
                 throw new Error('No offers available');
             }
 
             const offer = data.offers[0];
 
-            title.textContent = offer.title || 'Special Solar Offer';
+            title.textContent =
+                offer.title || 'Special Solar Offer';
 
             description.textContent =
-                offer.description || 'Explore our latest solar offers.';
+                offer.description ||
+                'Explore our latest solar offers.';
 
             discount.textContent = offer.discount || '';
 
-            button.textContent = offer.ctaText || 'Explore Offers';
+            button.textContent =
+                offer.ctaText || 'Explore Offers';
+
             button.href = offer.ctaLink || '/solutions';
 
             banner.classList.add('offer-loaded');
+
         } catch (error) {
             title.textContent = 'Solar Offers';
 

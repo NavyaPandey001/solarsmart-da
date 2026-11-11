@@ -1,6 +1,9 @@
 .blog-list-container {
     width: 100%;
-    padding: 40px 0;
+    max-width: 1200px;
+    padding: 40px 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .blog-list-heading {
@@ -172,7 +175,7 @@
 
 @media (max-width: 600px) {
     .blog-list-container {
-        padding: 25px 0;
+        padding: 25px 16px;
     }
 
     .blog-list-heading {
@@ -195,3 +198,4 @@
         height: 200px;
     }
 }
+

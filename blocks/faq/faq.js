@@ -17,19 +17,87 @@ export default function decorate(block) {
 
         if (cells.length < 2) return;
 
-        const label = cells[0];
-        const summary = document.createElement('summary');
+        const summary = document.createElement('button');
         summary.className = 'faq-item-label';
-        summary.append(...label.childNodes);
+        summary.type = 'button';
+        summary.setAttribute('aria-expanded', 'false');
+        summary.append(...cells[0].childNodes);
 
-        const body = cells[1];
+        const body = document.createElement('div');
         body.className = 'faq-item-body';
+        body.setAttribute('aria-hidden', 'true');
 
-        const details = document.createElement('details');
-        details.className = 'faq-item';
+        const inner = document.createElement('div');
+        inner.className = 'faq-item-inner';
+        inner.append(...cells[1].childNodes);
 
-        details.append(summary, body);
+        body.append(inner);
 
-        row.replaceWith(details);
+        const item = document.createElement('div');
+        item.className = 'faq-item';
+
+        item.append(summary, body);
+
+        let animation;
+
+        summary.addEventListener('click', () => {
+            const isOpen = summary.getAttribute('aria-expanded') === 'true';
+
+            if (animation) {
+                animation.cancel();
+            }
+
+            const startHeight = body.getBoundingClientRect().height;
+
+            if (isOpen) {
+                summary.setAttribute('aria-expanded', 'false');
+                body.setAttribute('aria-hidden', 'true');
+
+                animation = body.animate(
+                    [
+                        { height: `${startHeight}px` },
+                        { height: '0px' }
+                    ],
+                    {
+                        duration: 350,
+                        easing: 'ease-in-out',
+                        fill: 'forwards'
+                    }
+                );
+
+                animation.onfinish = () => {
+                    body.style.height = '0px';
+                    animation = null;
+                };
+            } else {
+                summary.setAttribute('aria-expanded', 'true');
+                body.setAttribute('aria-hidden', 'false');
+
+                body.style.height = 'auto';
+
+                const endHeight = body.scrollHeight;
+
+                body.style.height = `${startHeight}px`;
+
+                animation = body.animate(
+                    [
+                        { height: `${startHeight}px` },
+                        { height: `${endHeight}px` }
+                    ],
+                    {
+                        duration: 350,
+                        easing: 'ease-in-out',
+                        fill: 'forwards'
+                    }
+                );
+
+                animation.onfinish = () => {
+                    body.style.height = 'auto';
+                    animation = null;
+                };
+            }
+        });
+
+        row.replaceWith(item);
     });
 }

@@ -1,5 +1,9 @@
 .map {
-    padding: 35px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    box-sizing: border-box;
 }
 
 .map-container {
@@ -27,7 +31,17 @@
     box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
 }
 
+@media (max-width: 900px) {
+    .map {
+        padding: 35px 20px;
+    }
+}
+
 @media (max-width: 600px) {
+    .map {
+        padding: 25px 16px;
+    }
+
     .map-container iframe {
         height: 280px;
     }

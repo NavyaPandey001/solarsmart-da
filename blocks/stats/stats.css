@@ -2,15 +2,16 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
-    padding: 40px 0;
+    padding: 40px 32px;
+    box-sizing: border-box;
 }
 
 .stats-card {
     padding: 30px 20px;
     text-align: center;
-    background: #eaf6ef;
+    background: #f6efea;
     border-radius: 12px;
-    border-bottom: 4px solid #087443;
+    border-bottom: 4px solid #F77F00;
     transition: transform 0.3s ease;
 }
 
@@ -19,14 +20,14 @@
 }
 
 .stats-value {
-    color: #087443;
+    color: #FCBF49;
     font-size: 34px;
     font-weight: 800;
     margin-bottom: 12px;
 }
 
 .stats-label {
-    color: #405448;
+    color: #544740;
     font-size: 15px;
     font-weight: 600;
     margin: 0;
@@ -41,5 +42,6 @@
 @media (max-width: 500px) {
     .stats {
         grid-template-columns: 1fr;
+        padding: 30px 16px;
     }
 }

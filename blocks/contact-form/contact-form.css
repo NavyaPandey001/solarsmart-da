@@ -18,7 +18,7 @@
 }
 
 .contact-field label {
-    color: #173b2c;
+    color: #D62828;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -28,7 +28,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 13px 15px;
-    border: 1px solid #ccd5dc;
+    border: 1px solid #dcd2cc;
     border-radius: 7px;
     font: inherit;
     font-size: 15px;
@@ -36,8 +36,8 @@
 
 .contact-field input:focus,
 .contact-field textarea:focus {
-    outline: 2px solid #16834f;
-    border-color: #16834f;
+    outline: 2px solid #D62828;
+    border-color: #FCBF49;
 }
 
 .contact-field textarea {
@@ -47,7 +47,7 @@
 .contact-submit {
     width: 100%;
     padding: 14px 20px;
-    background: #087443;
+    background: #F77F00;
     color: #fff;
     border: 0;
     border-radius: 7px;
@@ -57,7 +57,7 @@
 }
 
 .contact-submit:hover {
-    background: #055c35;
+    background:#D62828;
 }
 
 .contact-form-message {
@@ -66,7 +66,7 @@
 }
 
 .contact-form-message.success {
-    color: #087443;
+    color: #FCBF49;
     font-weight: 600;
 }
 

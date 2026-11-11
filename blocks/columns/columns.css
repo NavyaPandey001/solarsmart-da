@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-    padding: 40px 0;
+    padding: 40px 32px;
+    box-sizing: border-box;
 }
 
 .columns-card {
@@ -20,7 +21,7 @@
 }
 
 .columns-card-title {
-    color: #087443;
+    color: #F77F00;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -35,5 +36,6 @@
 @media (max-width: 768px) {
     .columns {
         grid-template-columns: 1fr;
+        padding: 30px 20px;
     }
 }

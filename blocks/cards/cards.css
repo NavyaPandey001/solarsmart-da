@@ -1,3 +1,8 @@
+.cards {
+    padding: 0 32px;
+    margin: 0;
+}
+
 .cards ul {
     list-style: none;
     padding: 0;
@@ -28,4 +33,17 @@
 .cards p {
     color: #555454;
     line-height: 1.6;
+}
+
+/* Mobile responsive spacing */
+@media (max-width: 768px) {
+    .cards {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        padding: 0 16px;
+    }
 }

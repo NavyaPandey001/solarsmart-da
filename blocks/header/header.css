@@ -1,7 +1,17 @@
 header {
-    background: #4D2A00;
-    color: white;
-    padding: 16px 32px;
+    width: 100%;
+    background: linear-gradient(
+            110deg,
+            #065533 0%,
+            #268a4e 55%,
+            #50b189 100%
+    );
+    color: #ffffff;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 12%);
+    position: relative;
+    z-index: 100;
 }
 
 .header-nav {
@@ -9,23 +19,111 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #FCBF49;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.logo::before {
+    content: "☀";
+    display: inline-block;
+    color: #FCBF49;
+    font-size: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    top: -2px;
+}
 .header-nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    align-items: center;
+    gap: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.header-nav a {
-    color: white;
-    text-decoration: none;
+.header-nav li {
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.header-nav a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 8px 0;
+    transition: color 0.25s ease;
+}
+
+.header-nav ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: #FCBF49;
+    transition: width 0.25s ease;
+}
+
+.header-nav ul a:hover {
+    color: #FCBF49;
+}
+
+.header-nav ul a:hover::after {
+    width: 100%;
+}
+
+.header-nav a:focus-visible {
+    outline: 2px solid #FCBF49;
+    outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 16px 20px;
+    }
+
+    .header-nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 16px;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .header-nav ul {
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .header-nav a {
+        font-size: 14px;
+    }
 }

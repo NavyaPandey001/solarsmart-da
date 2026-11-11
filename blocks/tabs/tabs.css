@@ -1,7 +1,9 @@
 .tabs {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 40px 32px;
+    box-sizing: border-box;
 }
 
 .tabs .tabs-list {
@@ -9,18 +11,18 @@
     gap: 8px;
     max-width: 100%;
     overflow-x: auto;
-    border-bottom: 2px solid #dce5df;
+    border-bottom: 2px solid #e5dfdc;
 }
 
 .tabs .tabs-list button {
     flex: 0 0 auto;
     margin: 0;
     padding: 13px 22px;
-    border: 1px solid #dce5df;
+    border: 1px solid #e5e1dc;
     border-bottom: none;
     border-radius: 8px 8px 0 0;
-    background-color: #f0f4f1;
-    color: #164e3b;
+    background-color: #f4f2f0;
+    color: #D62828;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.4;
@@ -29,24 +31,24 @@
 }
 
 .tabs .tabs-list button:hover {
-    background-color: #dcfce7;
+    background-color: #fce8dc;
 }
 
 .tabs .tabs-list button[aria-selected='true'] {
-    background-color: #166534;
+    background-color: #D62828;
     color: #ffffff;
-    border-color: #166534;
+    border-color: #D62828;
     cursor: default;
 }
 
 .tabs .tabs-list button:focus-visible {
-    outline: 3px solid #16a34a;
+    outline: 3px solid #FCBF49;
     outline-offset: 2px;
 }
 
 .tabs .tabs-panel {
     padding: 25px;
-    border: 1px solid #dce5df;
+    border: 1px solid #e5dedc;
     border-top: none;
     border-radius: 0 0 8px 8px;
     background-color: #ffffff;
@@ -63,7 +65,17 @@
     margin-bottom: 0;
 }
 
+@media (max-width: 900px) {
+    .tabs {
+        padding: 35px 20px;
+    }
+}
+
 @media (max-width: 600px) {
+    .tabs {
+        padding: 25px 16px;
+    }
+
     .tabs .tabs-list {
         gap: 5px;
     }
